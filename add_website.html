@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Website</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Custom styles for navigation bar */
+        .navbar {
+            background-color: #343a40; /* Dark grey */
+        }
+        .navbar-brand, .navbar-nav .nav-link {
+            color: #ffffff !important; /* White */
+        }
+        .navbar-brand:hover, .navbar-nav .nav-link:hover {
+            color: #ffffff !important; /* White */
+        }
+        body {
+    background-color: lightseagreen; /* Light grey */
+    font-family: Arial, sans-serif;
+}
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="admin_panel.php">Admin Panel</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin_panel.php">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="user_details.php">Users</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="add_website.html">Add Website</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <h2>Add Website</h2>
+        <form id="addWebsiteForm" action="add_website.php" method="POST">
+            <div class="form-group">
+                <label for="websiteTitle">Title:</label>
+                <input type="text" class="form-control" id="websiteTitle" name="websiteTitle" required>
+            </div>
+            <div class="form-group">
+                <label for="websiteLink">Link:</label>
+                <input type="text" class="form-control" id="websiteLink" name="websiteLink" required>
+            </div>
+            <div class="form-group">
+                <label for="websiteDescription">Description:</label>
+                <textarea class="form-control" id="websiteDescription" name="websiteDescription" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="websiteKeywords">Keywords:</label>
+                <input type="text" class="form-control" id="websiteKeywords" name="websiteKeywords" required>
+            </div>
+            <div class="form-group">
+                <label for="websiteImages">Images:</label>
+                <textarea class="form-control" id="websiteImages" name="websiteImages" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Website</button>
+        </form>
+    </div>
+
+    <!-- Script for displaying success message -->
+    <script>
+        // Check if the URL contains the success message
+        var urlParams = new URLSearchParams(window.location.search);
+        var msg = urlParams.get('msg');
+
+        // Display alert message if the success message is present
+        if (msg === 'success') {
+            alert('Website added successfully!');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+/* Apply styles to body */
+body {
+    font-family: 'Roboto Slab', serif;
+    background: #DAE2F8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('feedback\ image.png'); /* Specify your background image URL */
+    background-size: cover; /* Ensure the background image covers the entire body */
+}
+
+/* Style form container */
+.form-content-section {
+    width: 80%; /* Adjust as needed */
+    background-color: rgba(6, 35, 54, 0.9); /* Add opacity to the background */
+    padding: 40px;
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    min-height: 10px;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+    .form-content-section {
+        width: 10%; /* Adjust width for smaller screens */
+        padding: 20px; /* Adjust padding for smaller screens */
+        border-radius: 20px; /* Adjust border radius for smaller screens */
+    }
+}
+
+
+/* Style form fields */
+.form-group {
+    margin-bottom: 20px; /* Add space between form fields */
+}
+
+/* Style submit button */
+.btn-primary {
+    border-radius: 20px;
+    width: 100%; /* Make button full width */
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+    .form-content-section {
+        width: 90%; /* Adjust width for smaller screens */
+    }
+}

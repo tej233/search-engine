@@ -1,0 +1,37 @@
+body {
+    background-image: url('background-image-url.jpg');
+    background-size: cover;
+}
+
+
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+}
+
+#alreadyLogin-wrap {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#alreadyLogin-wrap a {
+    color: #007bff;
+}

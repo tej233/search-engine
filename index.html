@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Search Engine</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <style>
+        .nav {
+            height: 55px;
+            width: 100%;
+            background: linear-gradient(135deg, #0099ff, #f00707);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        /* CSS for search results */
+
+        .search-results {
+            margin-top: 20px;
+        }
+
+        .result {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .result-title {
+            font-size: 18px;
+            margin-bottom: 5px;
+            text-decoration: none;
+            color: #1a0dab;
+        }
+
+        .result-link {
+            font-size: 14px;
+            color: #006621;
+            text-decoration: none;
+        }
+
+        .result-description {
+            margin-top: 5px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <div class="nav-header">
+            <div class="nav-title">
+                Welcome to SearchEngine
+            </div>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="login.html">Logout</a>
+            <a href="feedback.html">Feedback</a>
+        </div>
+    </div>
+
+    <main>
+        <section class="search-bar">
+            <h1>Explore the World</h1>
+            <form id="searchForm" action="home.php" method="GET">
+                <input type="text" name="searchQuery" id="searchQuery"
+                    placeholder="Search for articles, courses, videos...">
+                <button type="submit">Search</button>
+            </form>
+        </section>
+
+        <!-- Display search results -->
+        <section id="searchResults" class="search-results"></section>
+
+        <section class="featured-content">
+            <h2>Featured Categories</h2>
+            <ul>
+                <li><a href="https://en.wikipedia.org/wiki/Science,_technology,_engineering,_and_mathematics">STEM
+                        Subjects</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Humanities">Arts and Humanities</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/List_of_official_languages">Languages</a></li>
+                <!-- Add more featured categories -->
+            </ul>
+
+            <h2>Discover More</h2>
+            <ul>
+
+                <li><a href="https://www.bbc.com/news">Trending News - BBC News</a></li>
+                <li><a href="https://www.cnet.com/reviews/">Tech Reviews - CNET Reviews</a></a></li>
+                <li><a href="https://www.webmd.com/">Health & Wellness - WebMD</a></li>
+                <li><a href="https://www.webmd.com/">Health & Wellness - WebMD</a></li>
+                <li> <a href="https://www.lonelyplanet.com/">Travel Guides - Lonely Planet</a></li>
+                <li><a href="https://www.investopedia.com/">Financial Tips - Investopedia</a></li>
+                <li><a href="https://www.allrecipes.com/">Recipe Collections - AllRecipes</a></li>
+                <li><a href="https://www.diynetwork.com/">DIY Projects - DIY Network</a></li>
+                <li><a href="https://www.vogue.com/">Fashion Trends - Vogue</a></li>
+                <li><a href="https://www.etonline.com/">Entertainment News - Entertainment Tonight</a></li>
+                <li><a href="https://www.themuse.com/advice">Career Advice - The Muse</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>About Us | Contact | Privacy Policy</p>
+        <p>© 2023 EduSearch. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript for redirection -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const searchForm = document.getElementById('searchForm');
+            const searchResults = document.getElementById('searchResults');
+
+            searchForm.addEventListener('submit', function (event) {
+                event.preventDefault();
+                const formData = new FormData(searchForm);
+
+                fetch('home.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                    .then(response => response.text())
+                    .then(data => {
+                        searchResults.innerHTML = data;
+                    });
+            });
+        });
+    </script>
+</body>
+
+</html>
